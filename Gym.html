@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym - Panda Training</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <h1>Gym</h1>
+  </header>
+  <nav id="menu">
+    <a href="index.html">Inicio</a>
+    <a href="workhard.html">Work Hard</a>
+    <a href="gym.html">Gym</a>
+    <a href="hidratacion.html">Hidratación</a>
+    <a href="alimentacion.html">Alimentación</a>
+    <a href="prevencion.html">Prevención de Lesiones</a>
+  </nav>
+  <main>
+    <section>
+      <h2>Gym</h2>
+      <p>Planifica tus rutinas de gimnasio aquí.</p>
+      <form id="gym-form">
+        <label>Edad: <input type="number" name="edad"></label>
+        <label>Peso corporal (kg): <input type="number" name="peso"></label>
+        <label>Experiencia en gym:
+          <select name="experiencia">
+            <option value="nula">Nula</option>
+            <option value="muy-poca">Muy poca</option>
+            <option value="poca">Poca</option>
+            <option value="media">Media</option>
+            <option value="experta">Experta</option>
+          </select>
+        </label>
+        <label>Enfermedad o lesión preexistente: <input type="text" name="lesion"></label>
+        <label>Rutina deseada para:
+          <select name="dias">
+            <option value="1-dia">1 día</option>
+            <option value="2-dias">2 días</option>
+            <option value="3-dias">3 días</option>
+            <option value="4-dias">4 días</option>
+            <option value="5-dias">5 días</option>
+            <option value="6-dias">6 días</option>
+            <option value="7-dias">7 días</option>
+          </select>
+        </label>
+        <label>Tiempo de cada sesión:
+          <select name="tiempo">
+            <option value="30min">30 min</option>
+            <option value="40min">40 min</option>
+            <option value="1hora">1 hora</option>
+            <option value="1hora30min">1 hora 30 min</option>
+            <option value="2horas">2 horas</option>
+          </select>
+        </label>
+        <label>Objetivo:
+          <select name="objetivo">
+            <option value="fuerte">Ser más fuerte</option>
+            <option value="masa-muscular">Aumentar masa muscular</option>
+            <option value="cardio">Cardio (Resistencia cardiopulmonar)</option>
+          </select>
+        </label>
+        <table>
+          <tr>
+            <th>Grupo Muscular</th>
+            <th>Seleccionar</th>
+          </tr>
+          <tr>
+            <td>Pecho</td>
+            <td><input type="checkbox" name="musculos" value="pecho"></td>
+          </tr>
+          <tr>
+            <td>Espalda</td>
+            <td><input type="checkbox" name="musculos" value="espalda"></td>
+          </tr>
+          <tr>
+            <td>Hombros</td>
+            <td><input type="checkbox" name="musculos" value="hombros"></td>
+          </tr>
+          <tr>
+            <td>Bíceps</td>
+            <td><input type="checkbox" name="musculos" value="biceps"></td>
+          </tr>
+          <tr>
+            <td>Tríceps</td>
+            <td><input type="checkbox" name="musculos" value="triceps"></td>
+          </tr>
+          <tr>
+            <td>Antebrazos</td>
+            <td><input type="checkbox" name="musculos" value="antebrazos"></td>
+          </tr>
+          <tr>
+            <td>Cuádriceps</td>
+            <td><input type="checkbox" name="musculos" value="cuadriceps"></td>
+          </tr>
+          <tr>
+            <td>Isquiotibiales</td>
+            <td><input type="checkbox" name="musculos" value="isquiotibiales"></td>
+          </tr>
+          <tr>
+            <td>Glúteos</td>
+            <td><input type="checkbox" name="musculos" value="gluteos"></td>
+          </tr>
+          <tr>
+            <td>Pantorrillas</td>
+            <td><input type="checkbox" name="musculos" value="pantorrillas"></td>
+          </tr>
+          <tr>
+            <td>Core</td>
+            <td><input type="checkbox" name="musculos" value="core"></td>
+          </tr>
+        </table>
+        <label>Intensidad deseada:
+          <select name="intensidad">
+            <option value="facil">Fácil</option>
+            <option value="media">Media</option>
+            <option value="dificil">Difícil</option>
+            <option value="muy-dificil">Muy difícil</option>
+          </select>
+        </label>
+        <button type="button" onclick="sendGymForm()">Enviar</button>
+      </form>
+      <div class="response" id="gym-response"></div>
+    </section>
+  </main>
+  <script src="scripts.js"></script>
+</body>
+</html>
