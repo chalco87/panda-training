@@ -30,6 +30,19 @@ async function sendWorkHardForm() {
   document.getElementById('workhard-response').innerText = result;
 }
 
+async function sendGymForm() {
+  const formData = new FormData(document.getElementById('gym-form'));
+  const data = {};
+  formData.forEach((value, key) => {
+    if (!data[key]) data[key] = [];
+    data[key].push(value);
+  });
+
+  const prompt = `Crea una rutina de gimnasio basada en los siguientes datos: ${JSON.stringify(data)}. Incluye repeticiones, series, tiempo de descanso y peso a cargar si aplica.`;
+  const result = await sendToGemini(prompt);
+  document.getElementById('gym-response').innerText = result;
+}
+
 async function sendHidratacionForm() {
   const formData = new FormData(document.getElementById('hidratacion-form'));
   const data = {};
