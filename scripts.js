@@ -79,6 +79,25 @@ async function sendPrevencionForm() {
   document.getElementById('prevencion-response').innerText = result;
 }
 
+// Cargar datos desde localStorage al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+  const savedData = JSON.parse(localStorage.getItem('zonaEstudioData')) || [];
+  const tableBody = document.querySelector('#zona-de-estudio-table tbody');
+  tableBody.innerHTML = ''; // Limpiar tabla antes de cargar datos
+
+  savedData.forEach((data) => {
+    const newRow = document.createElement('tr');
+    newRow.innerHTML = `
+      <td>${data.subidoPor}</td>
+      <td><a href="${data.link}" target="_blank">${data.link}</a></td>
+      <td>${data.seccion}</td>
+      <td>${data.posicion}</td>
+      <td>${data.concepto}</td>
+    `;
+    tableBody.appendChild(newRow);
+  });
+});
+
 function submitZonaEstudioForm() {
   const formData = new FormData(document.getElementById('zona-de-estudio-form'));
   const data = {};
@@ -86,6 +105,18 @@ function submitZonaEstudioForm() {
     data[key] = value;
   });
 
+  // Guardar datos en localStorage
+  const savedData = JSON.parse(localStorage.getItem('zonaEstudioData')) || [];
+  savedData.push({
+    subidoPor: data['subido-por'],
+    link: data['link'],
+    seccion: data['seccion'],
+    posicion: data['posicion'],
+    concepto: data['concepto']
+  });
+  localStorage.setItem('zonaEstudioData', JSON.stringify(savedData));
+
+  // Agregar fila a la tabla
   const tableBody = document.querySelector('#zona-de-estudio-table tbody');
   const newRow = document.createElement('tr');
   newRow.innerHTML = `
@@ -96,4 +127,7 @@ function submitZonaEstudioForm() {
     <td>${data['concepto']}</td>
   `;
   tableBody.appendChild(newRow);
+
+  // Limpiar el formulario
+  document.getElementById('zona-de-estudio-form').reset();
 }
