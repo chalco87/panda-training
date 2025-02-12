@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hidratación - Panda Training</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <h1>Hidratación</h1>
+  </header>
+  <nav id="menu">
+    <a href="index.html">Inicio</a>
+    <a href="workhard.html">Work Hard</a>
+    <a href="gym.html">Gym</a>
+    <a href="hidratacion.html">Hidratación</a>
+    <a href="alimentacion.html">Alimentación</a>
+    <a href="prevencion.html">Prevención de Lesiones</a>
+    <a href="zona-de-estudio.html">Zona de Estudio</a>
+  </nav>
+  <main>
+    <section>
+      <h2>Hidratación</h2>
+      <p>Calcula cuánta agua necesitas diariamente.</p>
+      <form id="hidratacion-form">
+        <label>Edad: <input type="number" name="edad"></label>
+        <label>Peso (kg): <input type="number" name="peso"></label>
+        <label>Actividad física:
+          <select name="actividad">
+            <option value="sedentario">Sedentario</option>
+            <option value="ligera">Ligera</option>
+            <option value="moderada">Moderada</option>
+            <option value="intensa">Intensa</option>
+          </select>
+        </label>
+        <button type="button" onclick="sendHidratacionForm()">Calcular</button>
+      </form>
+      <div class="response" id="hidratacion-response"></div>
+    </section>
+  </main>
+  <script src="scripts.js"></script>
+</body>
+</html>

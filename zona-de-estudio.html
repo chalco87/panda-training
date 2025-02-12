@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zona de Estudio - Panda Training</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <h1>Zona de Estudio</h1>
+  </header>
+  <nav id="menu">
+    <a href="index.html">Inicio</a>
+    <a href="workhard.html">Work Hard</a>
+    <a href="gym.html">Gym</a>
+    <a href="hidratacion.html">Hidratación</a>
+    <a href="alimentacion.html">Alimentación</a>
+    <a href="prevencion.html">Prevención de Lesiones</a>
+    <a href="zona-de-estudio.html">Zona de Estudio</a>
+  </nav>
+  <main>
+    <section>
+      <h2>Zona de Estudio</h2>
+      <p>Comparte y accede a drills, jugadas e información relevante para cada posición.</p>
+      <form id="zona-de-estudio-form">
+        <label>Subido por: <input type="text" name="subido-por"></label>
+        <label>Link: <input type="url" name="link"></label>
+        <label>Sección:
+          <select name="seccion">
+            <option value="ofensa">Ofensa</option>
+            <option value="defensa">Defensa</option>
+          </select>
+        </label>
+        <label>Posición:
+          <select name="posicion">
+            <option value="quarterback">Quarterback</option>
+            <option value="linea-ofensiva">Línea Ofensiva</option>
+            <option value="corredor">Corredor</option>
+            <option value="receptor">Receptor</option>
+            <option value="linea-defensiva">Línea Defensiva</option>
+            <option value="linebacker">Linebacker</option>
+            <option value="corner-safety">Corner / Safety</option>
+          </select>
+        </label>
+        <label>Concepto:
+          <select name="concepto">
+            <option value="drill">Drill</option>
+            <option value="jugada">Jugada</option>
+            <option value="informativo">Informativo</option>
+          </select>
+        </label>
+        <button type="button" onclick="submitZonaEstudioForm()">Enviar</button>
+      </form>
+      <div class="response" id="zona-de-estudio-response">
+        <h3>Contenido compartido:</h3>
+        <table id="zona-de-estudio-table">
+          <thead>
+            <tr>
+              <th>Subido por</th>
+              <th>Link</th>
+              <th>Sección</th>
+              <th>Posición</th>
+              <th>Concepto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Contenido dinámico -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="scripts.js"></script>
+</body>
+</html>

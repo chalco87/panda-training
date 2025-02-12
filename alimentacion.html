@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alimentación - Panda Training</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <h1>Alimentación</h1>
+  </header>
+  <nav id="menu">
+    <a href="index.html">Inicio</a>
+    <a href="workhard.html">Work Hard</a>
+    <a href="gym.html">Gym</a>
+    <a href="hidratacion.html">Hidratación</a>
+    <a href="alimentacion.html">Alimentación</a>
+    <a href="prevencion.html">Prevención de Lesiones</a>
+    <a href="zona-de-estudio.html">Zona de Estudio</a>
+  </nav>
+  <main>
+    <section>
+      <h2>Alimentación</h2>
+      <p>Recibe recomendaciones alimenticias personalizadas. Estas recomendaciones son meramente informativas y no están avaladas por expertos.</p>
+      <form id="alimentacion-form">
+        <label>Edad: <input type="number" name="edad"></label>
+        <label>Peso (kg): <input type="number" name="peso"></label>
+        <label>Altura (cm): <input type="number" name="altura"></label>
+        <label>Objetivo:
+          <select name="objetivo">
+            <option value="bajar-peso">Bajar de peso</option>
+            <option value="aumentar-masa-muscular">Aumentar masa muscular</option>
+            <option value="rendir-partido">Rendir más antes de un partido</option>
+            <option value="rendir-entrenamiento">Rendir más en un entrenamiento</option>
+          </select>
+        </label>
+        <button type="button" onclick="sendAlimentacionForm()">Enviar</button>
+      </form>
+      <div class="response" id="alimentacion-response"></div>
+    </section>
+  </main>
+  <script src="scripts.js"></script>
+</body>
+</html>

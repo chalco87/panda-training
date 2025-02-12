@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work Hard - Panda Training</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <h1>Work Hard</h1>
+  </header>
+  <nav id="menu">
+    <a href="index.html">Inicio</a>
+    <a href="workhard.html">Work Hard</a>
+    <a href="gym.html">Gym</a>
+    <a href="hidratacion.html">Hidratación</a>
+    <a href="alimentacion.html">Alimentación</a>
+    <a href="prevencion.html">Prevención de Lesiones</a>
+    <a href="zona-de-estudio.html">Zona de Estudio</a>
+  </nav>
+  <main>
+    <section>
+      <h2>Work Hard</h2>
+      <p>En esta sección podrás crear rutinas de ejercicio personalizadas.</p>
+      <form id="workhard-form">
+        <label>Edad: <input type="number" name="edad"></label>
+        <label>Posición:
+          <select name="posicion">
+            <option value="linea-ofensiva">Línea Ofensiva</option>
+            <option value="corredores">Corredores</option>
+            <option value="receptores">Receptores</option>
+            <option value="quarterback">Quarterback</option>
+            <option value="linea-defensiva">Línea Defensiva</option>
+            <option value="linebackers">Linebackers</option>
+            <option value="corner-safety">Corner / Safety</option>
+          </select>
+        </label>
+        <label>Experiencia:
+          <select name="experiencia">
+            <option value="nula">Nula</option>
+            <option value="1-año">1 año</option>
+            <option value="2-años">2 años</option>
+            <option value="3-años">3 años</option>
+            <option value="4-o-mas">4 años o más</option>
+          </select>
+        </label>
+        <label>Tiempo de entrenamiento:
+          <select name="tiempo">
+            <option value="20min">20 min</option>
+            <option value="30min">30 min</option>
+            <option value="40min">40 min</option>
+            <option value="1hora">1 hora</option>
+            <option value="2horas">2 horas</option>
+          </select>
+        </label>
+        <label>Lugar de entrenamiento:
+          <select name="lugar">
+            <option value="casa">Casa</option>
+            <option value="aire-libre">Aire libre</option>
+          </select>
+        </label>
+        <label>Tienes alguna lesión? <input type="text" name="lesion"></label>
+        <table>
+          <tr>
+            <th>Habilidades</th>
+            <th>Seleccionar</th>
+          </tr>
+          <tr>
+            <td>Velocidad</td>
+            <td><input type="checkbox" name="habilidades" value="velocidad"></td>
+          </tr>
+          <tr>
+            <td>Fuerza</td>
+            <td><input type="checkbox" name="habilidades" value="fuerza"></td>
+          </tr>
+          <tr>
+            <td>Agilidad</td>
+            <td><input type="checkbox" name="habilidades" value="agilidad"></td>
+          </tr>
+          <tr>
+            <td>Resistencia (Cardio)</td>
+            <td><input type="checkbox" name="habilidades" value="resistencia"></td>
+          </tr>
+          <tr>
+            <td>Flexoelasticidad</td>
+            <td><input type="checkbox" name="habilidades" value="flexoelasticidad"></td>
+          </tr>
+          <tr>
+            <td>Técnica</td>
+            <td><input type="checkbox" name="habilidades" value="tecnica"></td>
+          </tr>
+        </table>
+        <button type="button" onclick="sendWorkHardForm()">Enviar</button>
+      </form>
+      <div class="response" id="workhard-response"></div>
+    </section>
+  </main>
+  <script src="scripts.js"></script>
+</body>
+</html>
